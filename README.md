@@ -1,3 +1,3 @@
 # FrontendSchool
-* https://johyemi.github.io/html/
+* https://johyemi.github.io/FrontendSchool/
 
