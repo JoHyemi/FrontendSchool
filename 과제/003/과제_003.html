@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>덩어리</title>
+    <style>
+        body {
+            background: rgb(151, 232, 235);
+        }
+        .덩어리 {
+            position: relative;
+            margin: 100px auto;
+            width: 500px;
+            height: 400px;
+            
+        }
+
+        .ear {
+            width: 450px;
+            position: absolute;
+            top: 100px;
+            /* overflow: hidden; */
+            left: 30px;
+            
+        }
+        
+        .ears-l {
+            
+            width: 90px;
+            height: 140px;
+            background: rgb(255, 215, 130);
+            border: 5px solid rgb(66, 66, 66);
+            border-top-left-radius: 80px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 1;
+            float: left;
+            transform: rotate(-80deg) ;
+
+        }
+        .ears-r {
+            
+            width: 90px;
+            height: 140px;
+            background: rgb(255, 215, 130);
+            border: 5px solid rgb(66, 66, 66);
+            border-top-left-radius: 30px;
+            border-top-right-radius: 80px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 1;
+            float: right;
+            transform: rotate(80deg);
+        }
+        .ears-l2 {
+            
+            width: 40px;
+            height: 50px;
+            background: rgb(252, 194, 69);
+            top: 50px ;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: 1;
+            left:25px;
+            transform: rotate(-80deg) ;
+            position:absolute;
+
+        }
+        .ears-r2 {
+            
+            width: 40px;
+            height: 50px;
+            background: rgb(252, 194, 69);
+            top: 50px ;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 40px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: 1;
+            right:25px;
+            transform: rotate(75deg);
+            position:absolute;
+        }
+
+        .body { 
+            width: 400px;
+            height: 300px;
+            background: rgb(64, 145, 74);
+            border-top-left-radius: 190px;
+            border-top-right-radius: 190px;
+            border-bottom-left-radius: 150px;
+            border-bottom-right-radius: 150px;
+            border: 5px solid rgb(66, 66, 66);
+            z-index: 2;
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+
+        }
+        .face {
+            width: 350px;
+            height: 300px;
+            background: rgb(255, 215, 130);
+            border: 5px solid rgb(66, 66, 66);
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            border-radius: 100%;
+            z-index: 2;
+        }
+        .eyes-l {
+            
+            width: 20px;
+            height: 20px;
+            background: rgb(66, 66, 66);
+            border-radius: 100%;
+            z-index: 3;
+            float: left;
+            position: absolute;
+            top: 120px;
+            left: 50px;
+
+        }
+        .eyes-r {
+            
+            width: 20px;
+            height: 20px;
+            background: rgb(66, 66, 66);
+            border-radius: 100%;
+            z-index: 3;
+            float: left;
+            position: absolute;
+            top: 120px;
+            right: 50px;
+        }
+        
+        .홍조-l {
+            width: 50px;
+            height: 30px;
+            background: rgb(255, 177, 177);
+            border-radius: 100%;
+            z-index: 3;
+            float: left;
+            position: absolute;
+            top: 150px;
+            left: 20px;
+        }
+        .홍조-r {
+            width: 50px;
+            height: 30px;
+            background: rgb(255, 177, 177);
+            border-radius: 100%;
+            z-index: 3;
+            float: left;
+            position: absolute;
+            top: 150px;
+            right: 20px;
+        }
+        .mouth {
+            width: 40px;
+            height: 20px;
+            background: rgb(255, 95, 95);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            z-index: 3;
+            position: absolute;
+            bottom: 150px;
+            left: 155px;
+        }
+        .nose {
+            width: 20px;
+            height: 15px;
+            background: rgb(66, 66, 66);
+            border-radius: 100%;
+            z-index: 3;
+            position: absolute;
+            top: 110px;
+            left: 165px;
+        }
+        .abc {
+            width: 80px;
+            height: 30px;
+            background: rgb(64, 145, 74);
+            border-top-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            z-index: 3;
+            border: 5px solid rgb(66, 66, 66);
+            position: absolute;
+            bottom: -95px;
+            left: 112.5px;
+            
+
+        }
+        .abd {
+            width: 80px;
+            height: 30px;
+            background: rgb(64, 145, 74);
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            z-index: 3;
+            border: 5px solid rgb(66, 66, 66);
+            position: absolute;
+            bottom: -95px;
+            right: 112.5px;
+            
+
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="덩어리">
+
+        <div class="ear">
+            <div class="ears-l"></div>
+            <div class="ears-r"></div>
+            <div class="ears-l2"></div>
+            <div class="ears-r2"></div>
+        </div>
+
+        <div class="body">
+
+            <div class="face">
+                
+                <div class="eyes-l"></div>
+                <div class="eyes-r"></div>
+                <div class="홍조-l"></div>
+                <div class="홍조-r"></div>
+                <div class="mouth"></div>
+                <div class="nose"></div>
+
+            </div>
+            <div class="abc"></div>
+            <div class="abd"></div>
+        </div>
+    </div>
+</body>
+</html>
