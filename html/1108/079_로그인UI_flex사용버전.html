@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN-UI</title>
+    <style>
+        .container {
+            width: 350px;
+            height: 135px;
+            background: #f7f9fa;
+            border: solid 1px #dae1e6;
+            box-sizing: border-box;
+            padding: 15px;
+            
+
+            
+        }
+        header {
+            color: rgb(112, 112, 112);
+            font-size: 12px;
+            box-sizing: border-box;
+            width: 315px;
+            margin: auto;
+            
+        }
+        .button {
+            width: 315px;
+            height: 48px;
+            background: #19ce60;
+            color: white;
+            font-weight: bolder;
+            text-align: center;
+            
+            box-sizing: border-box;
+            padding: 17px;
+            margin: auto;
+            margin-top: 11px;
+            font-size: 12px;
+        }
+        a:link {
+            text-decoration: none;       
+            }
+        
+        footer {
+            /* overflow: hidden; */
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            width: 315px;
+            margin: auto;
+            margin-top: 14px; 
+        }
+        .pw::before {
+            content: ""  ;
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 100%;
+            background: #989b9c;
+            margin: 6px 5px 0 5px;
+            vertical-align: top;
+        }
+        .id {
+            /* float: left; */
+            color: rgb(112, 112, 112);
+        }
+        .pw {
+            /* float: left; */
+            margin-top: 1px;
+            color: rgb(112, 112, 112);
+        }
+        .signin {
+            /* float: right; */
+            color: rgb(112, 112, 112);
+           
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            네이*를 더 안전하고 편리하게 이용하세요
+        </header>
+
+        <div class="button">
+            <img src="images/title.png" alt="maver" width=60px> 로그인
+        </div>
+
+        <footer>
+            <div class="idpw">
+                <a href="#" class="id">
+                    <img src="images/lock.png" alt="" width="10px" >
+                    아이디  </a>
+                
+                <a href="#" class="pw">비밀번호찾기</a>
+            </div>
+            <a href="#" class="signin">
+                <img src="images/user.png" alt="" width=10px>
+                회원가입
+            </a> 
+        </footer>
+    </div>
+    
+</body>
+</html>
