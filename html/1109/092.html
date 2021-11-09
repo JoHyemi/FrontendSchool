@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse</title>
+    <style>
+        @keyframes alternate {
+            0% {
+                transform: translate(0, 0);
+            }
+            33.33% {
+                transform: translate(500px, 0);
+                
+            }
+            66.66% {
+                transform: translate(500px, 500px);
+            }
+            100% {
+                transform: translate(0, 500px);
+            }
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            animation-name: alternate;
+            animation-direction: alternate;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div>alternate</div>
+</body>
+</html>
