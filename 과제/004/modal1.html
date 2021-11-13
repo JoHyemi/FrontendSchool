@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>modal</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        
+        .modal {
+            width: 520px;
+            height: 712px;
+            margin: 100px auto;
+            background-color: #fff;
+            border: 1px solid #c4c4c4;
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-family: 'Spoqa Han Sans Neo'; 
+            text-align: center;
+            font-size: 16px;
+        }
+        .head {
+            font-family: 'Spoqa Han Sans Neo'; 
+            line-height: 20.03px;
+            height: 38px;
+            margin-top: 20px;
+            border-bottom: 1px solid #c4c4c4;
+            font-weight: 500;
+        }
+        .login {
+            padding: 27px 24px 0;
+            box-sizing: border-box;
+        }
+        .joinweniv {
+            text-align: left;
+            margin-bottom: 26px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .id, .pw {
+            width: 472px;
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid #c4c4c4;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 16px 15px;
+            font-size: 16px;
+            font-family: 'Spoqa Han Sans Neo'; 
+            font-weight: 400;
+        }
+        .pw {
+            margin-bottom: 17px;
+        }
+        .login-auto {
+            display: flex;
+            align-items: center;
+            margin-bottom: 19px;
+        }
+        .login-auto__check {
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            margin-right: 8px;
+            border: #767676 1px solid;
+            box-sizing: border-box;
+            padding: 6.5px 5.5px;
+        }
+
+        .login-auto__check:active {
+            background-color: #2F80ED;
+            color: #fff;
+        }
+        .login-auto__icon {
+            width: 9.5px;
+            height: 6.5px;
+            color: #767676;
+        }
+        
+        
+        .login-auto__txt {
+            top: 3px;
+            font-size: 16px;
+            color: #767676;
+            font-weight: 500;
+        }
+        .login__btn {
+            width: 472px;
+            height: 50px;
+            border-radius: 5px;
+            background-color:#2F80ED;
+            border: none;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 23px;
+            box-sizing: border-box;
+            padding: 15px;
+            line-height: 22px;
+        }
+        .signup-missidpw {
+            display: flex;
+            justify-content: center;
+            font-size: 14px;
+            color: #767676;
+            margin-bottom: 32px;
+        }
+        .signup {
+            padding-right: 12px;
+            border-right: 1px solid #767676;
+            margin-right: 12px;
+            font-weight: 400;
+        }
+
+        .divide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            height: 18px;
+        }
+
+        .divide div {
+            width: 210px;
+            height: 1px;
+            background-color: #c4c4c4;
+        }
+
+        .divide-txt {
+            font-size: 14px;
+            color: #767676;
+            font-weight: 400;
+            margin: 0 13px;
+        }
+
+
+        li button {
+            width: 472px;
+            height: 50px;
+            padding: 0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+            font-weight: 500;
+            font-size: 16px;
+            color: #767676;
+            font-family: 'Spoqa Han Sans Neo';
+            position: relative;
+        }
+        
+        .login__btn-google {
+            border: 1px solid #767676;  
+        }
+        .google-logo {
+            position: absolute;
+            content: "";
+            width: 28px;
+            height: 28px;
+            top: 11px;
+            left: 12px;
+            box-sizing: border-box;
+        }
+
+        .login__btn-facebook{
+            border: 1px solid #2D9CDB;
+        }
+        .facebook-logo {
+            position: absolute;
+            content: "";
+            width: 12.83px;
+            height: 22.33px;
+            top: 13.33px;
+            left: 19px;
+            box-sizing: border-box;
+        }
+        .login__btn-naver{
+            border: 1px solid #00BF18;
+        }
+        .naver-logo {
+            position: absolute;
+            content: "";
+            width: 22px;
+            height: 22px;
+            top: 14px;
+            left: 15px;
+            box-sizing: border-box;
+        }
+        .login__btn-kakao {
+            border: 1px solid #F2C94C;
+        }
+        .kakao-logo {
+            position: absolute;
+            content: "";
+            width: 21px;
+            height: 21px;
+            top: 14.5px;
+            left: 15.5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <main class="modal">
+        <h1 class="head">로그인 또는 회원가입</h1>
+        <section class="login">
+            <p class="joinweniv">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+            <input type="text" placeholder="아이디" class="id">
+            <input type="password" placeholder="비밀번호" class="pw">
+            <div class="login-auto">
+                <div class="login-auto__check">
+                    <img src="./check2.png" class="login-auto__icon">
+                </div>
+                <p class="login-auto__txt">로그인 상태 유지</p>
+            </div>
+            <a href="https://mbit.weniv.co.kr/"><button type="button" class="login__btn">로그인</button></a>
+            <div class="signup-missidpw">
+                <p class="signup">회원가입</p>
+                <p class="missidpw">아이디/비밀번호 찾기</p>
+            </div>
+        </section>
+        <footer>
+            <div class="divide">
+                <div class="divide-1"></div>
+                <p class="divide-txt">또는</p>
+                <div class="divide-2"></div>
+            </div>
+            <ul>
+                <li>
+                    <a href="http://www.google.com"><button type="button" class="login__btn-google"><img src="./google2.png" alt="google" class="google-logo">구글 계정으로 로그인</button></a>
+                </li>
+                <li>
+                    <a href="http://www.facebook.com"><button type="button" class="login__btn-facebook"><img src="./facebook2.png" alt="facebook" class="facebook-logo">페이스북 계정으로 로그인</button></a>
+                </li>
+                <li>
+                    <a href="http://www.naver.com"><button type="button" class="login__btn-naver"><img src="./naver2.png" alt="naver" class="naver-logo">네이버 계정으로 로그인</button></a>
+                </li>
+                <li>
+                    <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=ko"><button type="button" class="login__btn-kakao"><img src="./kakao2.png" alt="kakao" class="kakao-logo">카카오톡 계정으로 로그인</button></a>
+                </li>
+            </ul>
+        </footer>
+
+    </main>
+</body>
+</html>
