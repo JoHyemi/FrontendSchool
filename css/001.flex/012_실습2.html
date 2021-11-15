@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout 실습</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        header {
+            background-color: aliceblue;
+            width: 100%;
+           
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        header li {
+            margin: 20px 10px 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        header li:nth-child(1) {
+            margin-right: auto;
+            font-size: 40px;
+        }
+        
+        
+        
+        section {
+            background-color: rgb(200, 230, 255);
+            width: 70%;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 30px;
+            font-weight: 300;
+        }
+
+        h2+img {
+            width: 80%;
+            margin: 0 auto 20px;
+        }
+        aside {
+            background-color: rgb(223, 229, 235);
+            width: 30%;
+            padding: 20px;
+        }
+        footer {
+            background-color: aliceblue;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media screen and (max-width:800px) {
+            section {
+                width: 100%;
+            }
+            aside {
+                width: 100%;
+            }
+            nav {
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>JEJU</li>
+                <li>About</li>
+                <li>History</li>
+                <li>Famous</li>
+                <li>Map</li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section>
+        <article>
+            <h2>Enjoy Jeju</h2>
+            <img src="../img/a.jpg" alt="제주도 사진입니다.">
+            
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate ipsa nihil quidem laboriosam sunt officiis culpa nam, cum fugiat veniam ipsam sed rem minima voluptates ullam laborum tempora autem deleniti.
+            Explicabo, necessitatibus enim aspernatur ea minus exercitationem illum quae iste ipsa id tempore possimus unde labore esse rem dignissimos asperiores qui non ipsam sequi laboriosam deserunt eos dolorem! Animi, repellendus.</p>
+        </article>
+    </section>
+    <aside>
+        <h2>AD.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ducimus voluptatem dolore vitae placeat hic harum quibusdam neque velit, dolores, voluptates impedit tenetur accusamus vero iste ratione qui earum nam!</p>
+
+    </aside>
+    
+    <footer>
+        <p>copyright</p>
+    </footer>
+</body>
+</html>
