@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout 실습</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+       
+       header {
+           background-color: #93CFCB;
+           height: 100px;
+           display: flex;
+           justify-content: space-between;
+           box-sizing: border-box;
+       }
+       nav ul {
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between;
+           padding-top: 40px;
+           font-weight: bold;
+           font-size: 25px;
+       }
+       nav ul li {
+            width: 100px;
+       }
+       h1 {
+           font-size: 50px;
+           margin: 20px 0 0 50px;
+       }
+       main {
+           display: flex;
+       }
+       h2 {
+           font-size: 25px;
+           font-weight: bold;
+           margin-bottom: 20px;
+       }
+       section {
+           background-color: #F0F6FF;
+           width: 70%;
+           height: 1000px;
+           box-sizing: border-box;
+           padding: 20px;
+       }
+
+       article h3 {
+           font-size: 25px;
+           font-weight: 600;
+           margin: 20px 0 ;
+       }
+       h3+p {
+           font-size: 22px;
+           font-weight: 300;
+           line-height: 33px;
+       }
+       aside {
+           background-color: #7496C3;
+           width: 30%;
+           box-sizing: border-box;
+           padding: 20px;
+       }
+
+       aside li {
+           margin-bottom: 20px;
+           font-size: 20px;
+
+       }
+       footer {
+           height: 100px;
+           background-color: #C0B7B4;
+       }
+
+       @media screen and (max-width:1000px) {
+           nav ul {
+               font-size: 15px;
+               display: block;
+               flex-direction: row;
+               padding-top: 5px;
+           }
+           nav ul li {
+                margin-bottom: 10px;
+           }
+           main {
+               display: block;
+           }
+            section {
+                width: 100%;
+            }
+            aside {
+                width: 100%;
+                height: 1000px;
+            }
+       }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JEJU</h1>
+        <nav>
+            <ul>
+                <li>menu</li>
+                <li>menu</li>
+                <li>menu</li>
+                <li>menu</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h2>article</h2>
+                <img src="../img/a.jpg" alt="제주도 사진입니다.">
+                <h3>제주도 가고싶다.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate ipsa nihil quidem laboriosam sunt officiis culpa nam, cum fugiat veniam ipsam sed rem minima voluptates ullam laborum tempora autem deleniti.
+                Explicabo, necessitatibus enim aspernatur ea minus exercitationem illum quae iste ipsa id tempore possimus unde labore esse rem dignissimos asperiores qui non ipsam sequi laboriosam deserunt eos dolorem! Animi, repellendus.</p>
+            </article>
+        </section>
+        <aside>
+            <h2>광고</h2>
+            <ul>
+                <li>제주도 렌트카</li>
+                <li>제주도 호텔</li>
+                <li>제주도 맛집</li>
+                <li>제주도 야경명소</li>
+                <li>제주도 포토존</li>
+            </ul>
+
+        </aside>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
