@@ -24,9 +24,21 @@
             font-family: 'Spoqa Han Sans Neo'; 
             line-height: 20.03px;
             height: 38px;
-            margin-top: 20px;
+            padding-top: 20px;
             border-bottom: 1px solid #c4c4c4;
             font-weight: 500;
+        }
+        header {
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            content: "";
+            width: 16px;
+            height: 16px;
+            top: 22.16px;
+            right: 24px;
+            box-sizing: border-box;
         }
         .login {
             padding: 27px 24px 0;
@@ -203,7 +215,10 @@
 </head>
 <body>
     <main class="modal">
-        <h1 class="head">로그인 또는 회원가입</h1>
+        <header>
+            <h1 class="head">로그인 또는 회원가입</h1>
+            <img src="./close.png" alt="close" class="close">
+        </header>
         <section class="login">
             <p class="joinweniv">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
             <input type="text" placeholder="아이디" class="id">
