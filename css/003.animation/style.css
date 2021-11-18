@@ -1,0 +1,157 @@
+@keyframes object-rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        /* turn이라는 단위는 정확히 한 바퀴를 돌리라는 의미입니다. */
+        transform: rotateY(1turn);
+    }
+}
+
+@keyframes scene-rotate {
+    0% {
+        transform: rotateX(0) rotateZ(0);
+    }
+    100% {
+        transform: rotateX(20deg) rotateZ(30deg);
+    }
+}
+
+@keyframes scene-rotate2 {
+    0% {
+        transform: rotateX(-90deg) rotateZ(0);
+    }
+    100% {
+        transform: rotateX(90deg) rotateZ(-30deg);
+    }
+}
+
+@keyframes scene-rotate3 {
+    0% {
+        transform: rotateX(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(10deg) rotateZ(-30deg);
+    }
+}
+
+body {
+    width: 100vh;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scene {
+    transform-style: preserve-3d;
+    /* 나중에 회전 */
+    animation: scene-rotate 10s linear infinite alternate;
+}
+
+.circle {
+    font-size: 50px;
+    font-weight: bold;
+    /* 나중에 작성 */
+    animation: object-rotate 15s linear infinite;
+    transform-style: preserve-3d;
+}
+.circle .word {
+    transform-style: preserve-3d;
+}
+.circle span {
+    /* background-color: goldenrod; */
+    position: absolute;
+    transform: rotateY(calc(var(--char-index)*5deg)) translateZ(800px);
+}
+
+/* 2 */
+.container2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scene2 {
+    transform-style: preserve-3d;
+    /* 나중에 회전 */
+    animation: scene-rotate2 5s linear infinite alternate;
+}
+
+.circle2 {
+    font-size: 50px;
+    font-weight: bold;
+    /* 나중에 작성 */
+    animation: object-rotate 10s linear infinite;
+    transform-style: preserve-3d;
+}
+.circle2 .word {
+    transform-style: preserve-3d;
+}
+.circle2 span {
+    /* background-color: goldenrod; */
+    position: absolute;
+    transform: rotateY(calc(var(--char-index)*5deg)) translateZ(1000px);
+}
+
+/* 3 */
+
+.container3 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scene3 {
+    transform-style: preserve-3d;
+    /* 나중에 회전 */
+    animation: scene-rotate3 5s linear infinite alternate;
+}
+
+.circle3 {
+    font-size: 50px;
+    font-weight: bold;
+    /* 나중에 작성 */
+    animation: object-rotate 10s linear infinite;
+    transform-style: preserve-3d;
+}
+.circle3 .word {
+    transform-style: preserve-3d;
+}
+.circle3 span {
+    /* background-color: goldenrod; */
+    position: absolute;
+    transform: rotateY(calc(var(--char-index)*5deg)) translateZ(900px);
+}
+
+.planet {
+    background-color: rgb(35, 84, 245);
+    border-radius: 100%;
+    width: 500px;
+    height: 500px;
+    border: none;
+    position: absolute;
+    top: 42%;
+    left: 44%;
+    z-index: -1;
+}
