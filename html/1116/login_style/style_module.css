@@ -17,6 +17,7 @@
     background-color: #fff;
     border:none;
     cursor: pointer;
+    padding: 0;
 }
 
 .module-inp .inp-login{
