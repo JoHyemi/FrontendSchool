@@ -80,6 +80,19 @@ let 전교점수 = [
     [[10, 20, 30, 40, 50],
     [20, 30, 40, 50, 60]],
 ];
+//1반의 평균
+let result = 0;
+let 더해진수 = 0;
+for (let r = 0; r < 전교점수[0].length;r++){
+    for (let i = 0; i < 전교점수[0][r].length; i++){
+        result += 전교점수[0][r][i];
+        더해진수++;    
+}
+}
+result/더해진수
+//35
+
+
 
 let 행렬 = [[1,2,3],[4,5,6],[7,8,9]]
 
@@ -123,3 +136,118 @@ let m = [[1, 2, 3],
     [1, 2, 3]]
 
 document.write(m + m);
+
+//배열 내장함수
+
+let 과일 = ['사과', '수박', '복숭아', '딸기', '바나나'];
+let 과일선물 = ['체리', '멜론'];
+
+document.write(`과일 : ${과일} <br>`);
+let 꺼낸과일 = 과일.pop()
+document.write(`과일.pop() : ${꺼낸과일} <br>`);
+//pop 마지막 요소 꺼내기
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`과일.push() : ${과일.push(꺼낸과일)} <br>`);
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`------------------ <br>`);
+
+let 문자열 = 과일.toString()
+document.write(`과일.toString()[1] : ${문자열[1]} <br>`);
+//문자로 만들기
+
+document.write(`과일.join('!!*') : ${과일.join('!!*')} <br>`);
+//합치기
+
+document.write(`과일.shift() : ${과일.shift()} <br>`);
+
+document.write(`과일.unshift() : ${과일.unshift('호준')} <br>`);
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`과일.splice(1, 0, '한라봉') : ${과일.splice(1, 0, '한라봉')} <br>`);
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`과일.slice(1, 3) : ${과일.slice(1, 3)} <br>`);
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`과일.concat(과일선물) : ${과일.concat(과일선물)} <br>`);
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`과일.sort() : ${과일.sort()} <br>`);
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`과일.reverse() : ${과일.reverse()} <br>`);
+document.write(`과일 : ${과일} <br>`);
+
+document.write(`['1', '11', '2', '22'].sort() : ${['1', '11', '2', '22'].sort()} <br>`);
+document.write(`['1', '11', '2', '22'].length : ${['1', '11', '2', '22'].length} <br>`);
+
+//funtion
+
+
+function 함수하나(){
+let x = 10;
+console.log('함수하나 호출')
+}
+
+함수하나()
+//-> 함수하나 호출
+
+
+
+let k = 10;
+function viewk(){
+    console.log(k);
+}
+function changek(){
+    k += 10;
+    console.log(k)
+}
+viewk()
+changek()
+viewk()
+//10 20 20
+
+
+let k = 10;
+function viewk(){
+    console.log(k);
+}
+function changek(){
+    let k = 20;
+    console.log(k)
+}
+viewk()
+changek()
+viewk()
+//10 20 10
+
+
+
+let a = 100;
+let b = 200;
+
+{a, b}
+//200
+
+let c = {a, b}
+
+c
+//{a: 100, b: 200}
+let c = {
+    'a':100,
+    'b':200
+}
+
+c
+//{a: 100, b: 200}
+{100, 200}
+//200
+let 오브 = {
+    a,
+    b
+}
+
+오브
+//{a: 100, b: 200}
