@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        .box.red {
+            background-color: red;
+        }
+        .box.yellow {
+            background-color: yellow;
+        }
+        .box.green {
+            background-color: green;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            margin: 50px auto 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <ul>
+        <li><button type="button" class="btn-red">빨강</button></li>
+        <li><button type="button" class="btn-yellow">노랑</button></li>
+        <li><button type="button" class="btn-green">초록</button></li>
+    </ul>
+
+    <script>
+        const box = document.querySelector('.box');
+        const btnRed = document.querySelector('.btn-red');
+        const btnYellow = document.querySelector('.btn-yellow');
+        const btnGreen = document.querySelector('.btn-green');
+        
+        let btnArr = [btnRed, btnYellow, btnGreen];
+        btnArr.forEach((item) => { 
+            item.addEventListener('click', function() {
+            box.classList.remove('red','yellow','green');
+            
+            if(item.className === 'btn-red'){
+                box.classList.add('red');
+            }else if(item.className === 'btn-yellow'){
+                box.classList.add('yellow');
+            } else{
+                box.classList.add('green');
+            }
+        })
+        // btnYellow.addEventListener('click', function() {
+        //     box.classList.remove('red','yellow','green');
+        //     box.classList.add('yellow');
+        // })
+        // btnGreen.addEventListener('click', function() {
+        //     box.classList.remove('red','yellow','green');
+        //     box.classList.add('green');
+        })
+        })
+
+
+        
+        
+
+        
+
+    </script>
+</body>
+</html>

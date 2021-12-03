@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <script>
+// 랜덤 숫자 뽑는함수
+        function randomFunc(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        // 뽑은 번호 담을 배열 준비
+        // let lottoArr = [];
+
+        //방법 3 Set 필요
+        let lottoSet = new Set();
+
+        // 6개 뽑아서 lottoArr에 담는함수
+        function lottoGenerator() {
+            // 배열이 꽉차기 전까지 반복 (6개 까지)
+            // while (lottoArr.length < 6) {
+
+                //방법3
+            while (lottoSet.size < 6){
+                let result = randomFunc(1, 46);
+                lottoSet.add(result);
+                // 중복 판단하기위해 필요한 변수
+                // let isGot = false;
+
+                //방법1
+                // 중복 판단
+                // lottoArr 의 요소를 순회
+                // lottoArr.forEach((element) => {
+                //     // 요소가 result 와 같다면 중복!
+                //     if (element === result) {
+                //         // 중복됐다고 표시!
+                //         isGot = true;
+                //     }
+                // });
+
+                // // 중복이 안되었다면 배열에 뽑은숫자 추가 (중복이 되었다면 if문에 못들어가서 추가하지않음) 
+                // if (!isGot) {
+                //     lottoArr.push(result);
+                // }
+
+
+                //방법2 - include
+                // 이게 참이면, 이걸 포함하고 있다는게-중복인게 true이면 push를 해라.
+                //익스플로러에서는 지원안함.. 
+                // if (!lottoArr.includes(result)){
+                //     lottoArr.push(result);
+                // }
+
+                //방법3 - set
+
+
+
+
+
+            }
+            // 여기에 도달했을땐 배열이 꽉~채워짐
+            // return lottoArr;
+            return lottoSet;
+        }
+        console.log(lottoGenerator());
+
+
+        //isGot이 true 라면 if(true) 가 되어 {}에 들어갑니다.
+        // isGot이 false 라면 if(true) 가 되어 {}에 못들어갑니다.
+
+        // 결과적으로 if(isGot) 의 뜻은 if(isGot === true) 과 동일해요
+    </script>
+</body>
+</html>
