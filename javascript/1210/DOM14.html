@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 직접 셀렉트 박스 만들기 */
+        h2 {
+            margin: 30px;
+        }
+
+        .cont-select {
+            position: relative;
+            width: 200px;
+        }
+
+        .btn-select {
+            width: 100%;
+            padding: 13px 14px;
+            color: #000;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: left;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            border-radius: 10px;
+            cursor: pointer;
+            background: url("images/icon-Triangle-down.png") right 13px center no-repeat;
+
+            /* 말줄임 추가 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .btn-select:focus {
+            outline: 3px solid #F8E4FF;
+        }
+
+        .list-member {
+            display: none;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 51px;
+            background: #FFF;
+            border: 1px solid #C4C4C4;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .btn-select.on {
+            background: url("images/icon-Triangle-up.png") right 13px center no-repeat;
+
+        }
+
+        .btn-select.on+.list-member {
+            display: block;
+        }
+
+        .list-member li {
+            height: 40px;
+            padding: 5px 18px;
+        }
+
+        .list-member li button {
+            display: block;
+            height: 30px;
+            width: 100%;
+            border: none;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+
+            /* 말줄임 추가 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .list-member li button:focus,
+        .list-member li button:hover {
+            background-color: #F8E4FF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>셀렉트 박스 만들기</h2>
+    <article class="cont-select">
+        <button class="btn-select">나의 최애 프로그래밍 언어</button>
+        <ul class="list-member">
+            <!-- <li><button type="button">Python</button></li>
+            <li><button type="button">Java</button></li>
+            <li><button type="button">JavaScript</button></li>
+            <li><button type="button">C#</button></li>
+            <li><button type="button">C/C++</button></li> -->
+        </ul>
+    </article>
+    <script>
+        const btn = document.querySelector('.btn-select');
+        const list = document.querySelector('.list-member');
+        //이제 필요한 것 리스트 안에 내용
+        const arrLang = ["Python", "Java", "JavaScript", "C#", "C/C++"]
+        
+        //li를 다섯번 만들어줘야함
+        arrLang.forEach((item)=> {
+            //li를 일단 만든다
+            const li = document.createElement('li');
+            //button도 만들어야 한다. 전역 btn과 다름. 어차피 함수 안에 있으니까.
+            const btn = document.createElement('button');
+            //타입= 버튼도 넣어준다.
+            btn.setAttribute('type', 'button');
+            //버튼 안에 저 파이선 등등이 들어가야 함. 하나하나.
+            btn.textContent = item;
+
+            //버튼을 li의 자식으로 만들어준다. li를 ul의 자식으로 만들어준다.
+            list.appendChild(li).appendChild(btn);
+        });
+
+        //btn클릭하면 함수가 실행된다
+        btn.addEventListener('click', () => {
+            //on 클래스를 넣어준다.
+            //토글: 온이 있으면 디스블레이 블럭이 되니까. 온이 있을 때만 드롭박스가 보이니까..
+            btn.classList.toggle('on');
+        
+        });
+        list.addEventListener('click', (event)=>{
+            //만약 이벤트에 노드네임이 버튼일 때, 확실하게 타겟 선택
+            if(event.target.nodeName === "BUTTON"){
+            //이 버튼의 텍스트 컨텐트 값은 이벤트 타겟의 텍스트컨텐트
+                btn.textContent = event.target.textContent; 
+            //이 버튼의 온을 없애야 함. 선택하면 꺼지고 반영이 되어야 하니까.
+                btn.classList.remove('on');
+            }
+        });
+            
+
+        
+        
+    </script>
+
+</body>
+
+</html>

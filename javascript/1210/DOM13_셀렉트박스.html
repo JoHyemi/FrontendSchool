@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 직접 셀렉트 박스 만들기 */
+        h2 {
+            margin: 30px;
+        }
+
+        .cont-select {
+            position: relative;
+            width: 200px;
+        }
+
+        .btn-select {
+            width: 100%;
+            padding: 13px 14px;
+            color: #000;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: left;
+            border: 1px solid #C4C4C4;
+            box-sizing: border-box;
+            border-radius: 10px;
+            cursor: pointer;
+            background: url("images/icon-Triangle-down.png") right 13px center no-repeat;
+
+            /* 말줄임 추가 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .btn-select:focus {
+            outline: 3px solid #F8E4FF;
+        }
+
+        .list-member {
+            display: none;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 51px;
+            background: #FFF;
+            border: 1px solid #C4C4C4;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .btn-select.on {
+            background: url("images/icon-Triangle-up.png") right 13px center no-repeat;
+
+        }
+
+        .btn-select.on+.list-member {
+            display: block;
+        }
+
+        .list-member li {
+            height: 40px;
+            padding: 5px 18px;
+        }
+
+        .list-member li button {
+            display: block;
+            height: 30px;
+            width: 100%;
+            border: none;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+
+            /* 말줄임 추가 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .list-member li button:focus,
+        .list-member li button:hover {
+            background-color: #F8E4FF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>셀렉트 박스 만들기</h2>
+    <article class="cont-select">
+        <button class="btn-select">나의 최애 프로그래밍 언어</button>
+        <ul class="list-member">
+            <li><button type="button">Python</button></li>
+            <li><button type="button">Java</button></li>
+            <li><button type="button">JavaScript</button></li>
+            <li><button type="button">C#</button></li>
+            <li><button type="button">C/C++</button></li>
+        </ul>
+    </article>
+
+    <script>
+        const myLan = document.querySelector(".btn-select");
+        const dropBox = document.querySelector(".list-member");
+        
+
+        myLan.addEventListener('click', function(){
+
+
+            dropBox.style.display = "block"
+
+            
+        })
+
+        
+
+        document.querySelector("li").addEventListener('click', function(){
+            
+            myLan.innerHTML = "this";
+            dropBox.classList.add("on");
+            
+        })
+
+    </script>
+
+<script>
+
+</script>
+
+
+
+
+<!-- 준홍님
+    <script>
+        // 버튼, 리스트, 프래그먼트(임시요소를 만들어서 자식들을 만들고 나중에 li를 생성해서 붙여줌..)
+        const button = document.querySelector('.btn-select');
+        const list = document.querySelector('.list-member');
+        const fragment = document.createDocumentFragment();
+
+        ['Python', 'Java', 'JavaScript', 'C#', 'C/C++'].forEach(
+            //원소가 하나씩 들어가 있음
+            lang => {
+                const li = document.createElement('li');
+                const btn = document.createElement('button');
+                btn.setAttribute('type', 'button');
+                //텍스트로 만들어준다.
+                btn.appendChild(document.createTextNode(lang));
+                li.appendChild(btn);
+                fragment.appendChild(li);
+            }
+        );
+
+        list.appendChild(fragment);
+
+        button.addEventListener('click', e => e.currentTarget.classList.toggle('on'));
+
+        list.addEventListener('click', e => {
+            button.textContent = e.target.textContent;
+            button.classList.remove('on');
+        });
+    </script>
+-->
+
+<!-- 춘구님 -->
+<!-- <script>
+    
+    const btn = document.querySelector(".btn-select");
+    const list = document.querySelector(".list-member");
+    
+    langList = ["Python", "Java", "JavaScript", "C#", "C/C++"];
+    for (i of langList) {
+        const li = document.createElement("li");
+        const button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.innerText = i;
+        li.append(button);
+        list.append(li);
+    }
+    
+    btn.addEventListener("click", (e) => {
+        e.target.classList.toggle("on");
+    });
+    
+    list.addEventListener("click", (e) => {
+        if (e.target.tagName === "BUTTON") {
+            const lang = e.target.innerText;
+            btn.innerText = lang;
+            btn.classList.remove("on");
+        }
+    });
+
+</script>    -->
+
+    <!-- 기영님
+    <script>
+        const selectBtn = document.querySelector(".btn-select");
+        const list = document.querySelector(".list-member");
+        const lang = ["Python", "Java", "JavaScript", "C#", "C/C++"];
+        for (const s of lang) {
+            const li = document.createElement("li");
+            const button = document.createElement("button");
+            button.innerText = s;
+            li.appendChild(button);
+            list.appendChild(li);
+        }
+        selectBtn.addEventListener("click", function () {
+            selectBtn.classList.toggle("on");
+        });
+        list.addEventListener("click", (e) => {
+            selectBtn.innerText = e.target.innerText;
+            selectBtn.classList.remove("on");
+        });
+    </script> -->
+
+
+
+<!--혜진님 
+    <script>
+    
+    const btn = document.querySelector('.btn-select'); //select
+    const ul = document.querySelector('.list-member'); //ul
+
+
+    let arr = ["Python", "Java", "JavaScript", "C#", "C/C++"];
+    for (let i = 0; i < arr.length; i++) {
+        const li = document.createElement("li");
+        ul.append(li);
+        li.innerHTML = `<button type='button'>${arr[i]}</button>`;
+    }
+
+    const listAll = ul.querySelectorAll('button'); // option list
+    const firstOption = ul.querySelector('button'); //option first button
+    const lastOption = listAll[listAll.length - 1]; //option last button
+
+
+    const handlClickSelect = function () {
+        btn.classList.toggle('on');
+        ul.classList.toggle('on');
+    }
+    const handlClickOption = function (e) {
+        btn.innerHTML = e.target.innerText;
+        btn.classList.remove('on');
+        ul.classList.remove('on');
+        window.setTimeout(function () {
+            btn.focus();
+        }, 100);
+    }
+
+    //focus 이동
+    const handleTabFoucus = function (e) {
+        if (!e.shiftKey && e.keyCode === 9) {
+            e.preventDefault();
+            window.setTimeout(function () {
+                firstOption.focus();
+            }, 100);
+        }
+    };
+    //shift+tab
+    const handlShiftTabFoucus = function (e) {
+        if (e.shiftKey && e.keyCode === 9) {
+            e.preventDefault();
+            window.setTimeout(function () {
+                lastOption.focus();
+            }, 100);
+        }
+    };
+    //ESC키 
+    const hadleEsc = function (e) {
+        if (e.keyCode === 27) {
+            btn.classList.remove('on');
+            ul.classList.remove('on');
+            window.setTimeout(function () {
+                btn.focus();
+            }, 100);
+        }
+    }
+
+    btn.addEventListener('click', handlClickSelect);
+    ul.addEventListener('click', handlClickOption);
+
+    btn.addEventListener('keydown', hadleEsc);
+    ul.addEventListener('keydown', hadleEsc);
+
+    lastOption.addEventListener('keydown', handleTabFoucus);
+    firstOption.addEventListener('keydown', handlShiftTabFoucus);
+
+
+</script> -->
+
+
+<!-- if (e.target.tagName === 'BUTTON')을 넣어서 타겟을 명확하게 해줘야된다. -->
+</body>
+
+</html>
